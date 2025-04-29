@@ -40,7 +40,7 @@ beautifulsoup4==4.12.3
 
 2. 아래 명령어를 그림과 같이 복사해 붙여 넣습니다:
 
-pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
+pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4 
 >
 > 이미 설치된 라이브러리는 자동으로 건너뜁니다.
 >
@@ -72,5 +72,25 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 - `openpyxl` – 엑셀 파일(.xlsx) 저장
 - `tqdm` – 진행률 표시
 - `beautifulsoup4` – HTML 분석 및 텍스트 추출
+- 
 
+## 3. 편리한 API 키링(keyring) 설치
+
+이 프로그램은 DART API 키와 같은 민감한 정보를 다룰 수 있습니다.  
+이때 매번 코드에 비밀번호나 API 키를 직접 입력하면 보안에 취약하고, 실수로 유출될 위험도 있습니다.
+
+`keyring` 라이브러리를 사용하면  
+**한 번만 API 키를 저장해두고, 이후에는 자동으로 불러올 수 있어 편리하고 안전합니다.**
+
+- ✅ 키를 코드에 직접 쓰지 않아도 됨
+- ✅ 팀원과 코드를 공유할 때 키가 노출되지 않음
+- ✅ 매 실행마다 반복 입력할 필요 없음
+
+이 프로그램은 DART API 키와 같은 민감한 정보를 다룰 수 있습니다. 
+아래 사진에서 라이브러리가 작성된 모습, 키링을 불러온 모습을 확인할 수 있습니다. 
+키링은 한번만 만들면 복붙해서 반복하여 사용할 수 있습니다. 
+
+![image](https://github.com/user-attachments/assets/52e68ebf-b1c0-48f0-8cf5-d2d755a539b2)
+
+키링을 만들어볼까요? 1분컷 키링 만들기 바로가기는 여기를 눌러주세요. 
 
