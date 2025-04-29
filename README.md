@@ -20,26 +20,26 @@
 - 혹 운영체계가 서로 맞지 않으면 실행이 되지 않을 수 있는데 그럴 때는 Chat GPT에 물어보면 해결방법을 안내해 줄테니 안심하고 실행해 보세요.
 
 ✅ 실행 환경 정보
-운영체제: Windows 11
+- 운영체제: Windows 11
 
-파이썬 버전: 3.12.4 (Anaconda 패키징)
+- 파이썬 버전: 3.12.4 (Anaconda 패키징)
 
-CPU 아키텍처: 64비트 (AMD64)
+- CPU 아키텍처: 64비트 (AMD64)
 
 ✅ 설치된 패키지 버전
-pandas==2.2.2
+- pandas==2.2.2
 
-requests==2.32.2
+- requests==2.32.2
 
-keyring==24.3.1
+- keyring==24.3.1
 
-selenium==4.25.0
+- selenium==4.25.0
 
-openpyxl==3.1.2
+- openpyxl==3.1.2
 
-tqdm==4.66.4
+- tqdm==4.66.4
 
-beautifulsoup4==4.12.3
+- beautifulsoup4==4.12.3
 
 
 ## 3. 필수 라이브러리 설치
