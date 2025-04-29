@@ -28,7 +28,6 @@ tqdm==4.66.4
 beautifulsoup4==4.12.3
 
 
-
 ## 2. 필수 라이브러리 설치
 
 이 프로그램을 실행하기 위해서는 몇 가지 파이썬 라이브러리가 필요합니다.  
@@ -40,17 +39,15 @@ beautifulsoup4==4.12.3
    `Anaconda Prompt`를 검색해 실행하세요.
 
 2. 아래 명령어를 복사해 붙여넣습니다:
-> 이미 설치된 라이브러리는 자동으로 건너뜁니다.
 
 pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
-
+> 이미 설치된 라이브러리는 자동으로 건너뜁니다.
 
 ### ▶ 라이브러리별 개별 설치 명령어
 
 아래처럼 라이브러리를 하나씩 따로 설치할 수도 있습니다:
-> 설치 중 오류가 발생하면, 아래 개별 설치 명령어를 참고해서 설치하시기 바랍니다.
-
 pip install pandas pip install requests pip install keyring pip install selenium pip install openpyxl pip install tqdm pip install beautifulsoup4
+> 설치 중 오류가 발생하면, 아래 개별 설치 명령어를 참고해서 설치하시기 바랍니다.
 
 설치가 완료될 때까지 기다려 주세요. 
 설치 오류가 발생하면 해당 라이브러리만 따로 설치해도 됩니다
@@ -66,8 +63,4 @@ pip install pandas pip install requests pip install keyring pip install selenium
 - `tqdm` – 진행률 표시
 - `beautifulsoup4` – HTML 분석 및 텍스트 추출
 
-
-### ❗ 설치 중 오류가 발생하는 경우
-
-- 
 
