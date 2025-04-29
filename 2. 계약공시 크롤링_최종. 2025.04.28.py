@@ -4,6 +4,11 @@ Created on Mon Apr 28, 2025
 최종 검토/수정 완료본
 """
 
+# 이 프로그램을 이용시에는,  
+# 1. 23열의 api키를 본인의 것으로 바꾸시고, 
+# 2. 27열의 기업이름 바꾸시고, 
+# 3. 167열의 인출 파일이름을 바꾸시면 됩니다. 
+
 import OpenDartReader
 import keyring
 import pandas as pd
@@ -166,3 +171,4 @@ df.to_excel(save_path, index=False)
 driver.quit()
 
 print('✅ 2017~2025 전체 수주공시 데이터 크롤링 및 저장 완료!')
+
