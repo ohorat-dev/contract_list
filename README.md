@@ -98,7 +98,7 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 - 코드 공유 시 비밀번호/API 키 노출 없음
 - 실행할 때마다 키 입력 불필요
 
-> 아래 사진에서 라이브러리가 작성된 모습, 키링을 불러온 모습을 확인할 수 있습니다. 
+> 아래 사진에서 라이브러리가 작성된 모습, 키링이 입력된 모습을 확인할 수 있습니다. 
 
 ![image](https://github.com/user-attachments/assets/9681d4dc-96a5-4eb3-8baf-3bad1ca1aa01)
 
