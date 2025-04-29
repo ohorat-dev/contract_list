@@ -10,7 +10,7 @@ Created on Tue Apr 29 11:35:00 2025
 
 # 먼저 keyring 설치 (처음 1번만 설치)
 # 터미널이나 Anaconda Prompt에서 입력:
-# pip install keyring(아까 설치했다면 다시 할 필요는 없음)
+# pip install keyring(설치했다면 다시 할 필요는 없음)
 
 import keyring
 
