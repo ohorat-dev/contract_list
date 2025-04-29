@@ -16,7 +16,7 @@ import keyring
 # 📌 저장할 값 설정
 service_name = 'dart_api_key' # 서비스 이름 (이건 바꾸지 마시고 그대로 사용하면 됨)
 username = '사용자_닉네임'     # 사용자 이름 (본인 id 맘데로 정하기, 저는 lgh)
-password = '여기에_API_키_입력'     # 저장할 실제 API 키(찐 api 키 자리)
+password = '여기에_API_키_입력'     # 저장할 실제 API 키(찐 api 키 자리, api 생성은 청도군님이 공유하신 블로그 참조)
 
 # (입력시 콤마 지우지 않도록 주의하세요)
 
