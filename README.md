@@ -88,9 +88,11 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 
 ![image](https://github.com/user-attachments/assets/9681d4dc-96a5-4eb3-8baf-3bad1ca1aa01)
 
+키링 만들기 코드 바로가기 
 
-키링을 만들어볼까요? 1분컷 키링 만들기
-여기에서 제공하는 코드는 사용이 가능한 완성된 코드입니다. 그러니 일일이 타이핑 하지 마시고 쭉 복사해서 한번에 붙여 넣으세요. 
+## 4. 편리한 API 키링(keyring) 설치키링을 만들어볼까요? 1분컷 키링 만들기
+이제 카테고리로 돌아가서 키링을 만들고, 단일판매, 공급계약체결을 크롤링해 보세요. 
+여기에서 제공하는 코드를 파이썬 프로그램 창에 죽 복사해서 F9키를 눌러 한번에 실행하시기 바랍니다. 
 
 
 
