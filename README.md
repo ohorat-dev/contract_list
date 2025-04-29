@@ -79,7 +79,7 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 ![image](https://github.com/user-attachments/assets/9681d4dc-96a5-4eb3-8baf-3bad1ca1aa01)
 
 ## 4. 실행은 F9
-실행할 때는 Cont+A를 눌러서 프로그램 전체를 선택하시고, F9을 눌러서 프로그램 전체를 한번에 실행시켜 주세요. 엔터가 아니라 F9! 
+여기에 업로드한 파이썬 프로그램을 실행할 때는 Cont+A를 눌러서 프로그램 전체를 선택하시고, F9을 눌러서 프로그램 전체를 한번에 실행시켜 주세요. 엔터가 아니라 F9! 
 잘 안될 때에만 부분씩 실행해서 검토하시면 됩니다. 이제 카테고리로 돌아가서 키링을 만들고, 단일판매, 공급계약체결을 크롤링해 보세요. 
 
 
