@@ -8,11 +8,11 @@
 - 아나콘다 프로그램의 다운로드 링크는 다음과 같습니다
 - https://www.anaconda.com/products/distribution
 - 설치가 쉽지 않다면 유튜브를 검색해 보세요. 설치를 안내해주는 유튜브 영상이 많이 있습니다. 
-![image](https://github.com/user-attachments/assets/70ad7ff5-bb3a-4bb1-9f1c-5514162362ce)
 
 
 
 설치가 끝나면 Spyder를 실행할 수도 있고, Anaconda Prompt(아나콘다 프롬프트)를 통해 패키지를 설치하거나 코드를 실행할 수 있습니다.
+
 
 
 본 프로그램이 설치된 운영체계는 아래와 같습니다.
@@ -32,7 +32,6 @@ selenium==4.25.0
 openpyxl==3.1.2
 tqdm==4.66.4
 beautifulsoup4==4.12.3
-![image](https://github.com/user-attachments/assets/f06a55fa-6758-4a39-aa8c-18fd79d7f095)
 
 
 ------------------------------------------------------------------------------------------------------------------
