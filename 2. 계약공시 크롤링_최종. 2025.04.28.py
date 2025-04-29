@@ -110,7 +110,7 @@ for idx, row in 단일판매공시.iterrows():
                     if '종료일' in cols[0] and 종료일 is None:
                         종료일 = cols[1].replace('.', '-')
 
-        # ✅ 여기부터 데이터 저장 (들여쓰기 맞춰야 함)
+        # 여기부터 데이터 저장 (들여쓰기 맞춰야 함)
         체결계약명.append(계약명)
         계약금액.append(금액)
         최근매출액.append(매출)
@@ -170,5 +170,5 @@ df.to_excel(save_path, index=False)
 # 9. 드라이버 종료
 driver.quit()
 
-print('✅ 2017~2025 전체 수주공시 데이터 크롤링 및 저장 완료!')
+print('2017~2025 전체 수주공시 데이터 크롤링 및 저장 완료!')
 
