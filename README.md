@@ -74,7 +74,7 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 
 ## 3. 편리한 API 키링(keyring) 설치
 
-이 프로그램은 DART API 키와 같은 민감한 정보를 다룰 수 있습니다.  
+이 프로그램은 DART API 키와 같은 민감한 정보를 다룰 수 있습니다:  
 이때 매번 코드에 비밀번호나 API 키를 직접 입력하면 보안에 취약하고, 실수로 유출될 위험도 있습니다.
 
 `keyring` 라이브러리를 사용하면  
