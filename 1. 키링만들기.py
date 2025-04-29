@@ -25,4 +25,6 @@ keyring.set_password(service_name, username, password)
 
 print("✅ API 키가 키링에 안전하게 저장되었습니다.")
 
+#끝. 키링 설치 간단하죠? 
+
 
