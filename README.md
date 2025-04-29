@@ -100,7 +100,7 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 
 
 ## 5. 추천 링크 
-생각보다 쉽지 않거나 좀 더 공부해보고 싶으신 분께는 다음의 도서와 링크를 추천합니다. 
+너무나도 유용한 파이썬. 좀 더 공부해보고 싶으신 분께는 다음의 도서와 링크를 추천합니다. 
 https://github.com/hyunyulhenry/quant_py
 
 
