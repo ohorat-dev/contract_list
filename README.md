@@ -33,6 +33,7 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 >
 ![image](https://github.com/user-attachments/assets/d43c0718-c7c1-4079-8976-139acd822ef7)
 
+
 ### ▶ 라이브러리별 개별 설치 명령어
 
 라이브러리를 따로따로 설치하고 싶다면:
@@ -48,6 +49,8 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 설치를 시작하면 완료될 때까지 기다려 주세요. 
 설치 오류가 발생하면 해당 라이브러리만 따로 설치해도 됩니다.
 ※ 만약 pip install이 실패하면 conda install 명령어를 사용해도 됩니다.
+
+※ 설치 방법이 어렵다면, 유튜브에 '라이브러리 설치 방법'을 검색해 보세요. 이 역시 친절한 영상이 많이 있습니다.
 
 ### 📦 설치되는 라이브러리 목록
 
