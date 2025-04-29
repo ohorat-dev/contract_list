@@ -99,7 +99,7 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 여기에서 제공하는 코드를 파이썬 프로그램 창에 죽 복사해서 F9키를 눌러 한번에 실행하시기 바랍니다. 
 
 
-## 4. 실행은 F9
+## 5. 더 공부하고 싶은 분을 위한 추천 링크 
 좀더 공부하기를 희망하시는 분께는 아래의 도서와 링크를 추천합니다. 
 https://github.com/hyunyulhenry/quant_py
 
