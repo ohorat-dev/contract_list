@@ -14,35 +14,7 @@
 설치를 완료하면, Spyder 프로그램을 실행하거나 Anaconda Prompt를 이용해 필요한 라이브러리를 설치할 수 있습니다.
 
 
-## 2. 실행 환경
-
-본 프로그램이 설치된 운영체계는 아래와 같습니다.
-- 혹 운영체계가 서로 맞지 않으면 실행이 되지 않을 수 있는데 그럴 때는 Chat GPT에 물어보면 해결방법을 안내해 줄테니 안심하고 실행해 보세요.
-
-✅ 실행 환경 정보
-- 운영체제: Windows 11
-
-- 파이썬 버전: 3.12.4 (Anaconda 패키징)
-
-- CPU 아키텍처: 64비트 (AMD64)
-
-✅ 설치된 패키지 버전
-- pandas==2.2.2
-
-- requests==2.32.2
-
-- keyring==24.3.1
-
-- selenium==4.25.0
-
-- openpyxl==3.1.2
-
-- tqdm==4.66.4
-
-- beautifulsoup4==4.12.3
-
-
-## 3. 필수 라이브러리 설치
+## 2. 필수 라이브러리 설치
 
 이 프로그램을 실행하기 위해서는 몇 가지 라이브러리가 필요합니다.  
 Anaconda Prompt를 실행한 후, 아래 명령어를 한 번에 복사하여 설치하세요:
@@ -87,7 +59,7 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 - `tqdm` – 진행률 표시
 - `beautifulsoup4` – HTML 분석 및 텍스트 추출- 
 
-## 4. 편리한 API 키링(keyring) 설치
+## 3. 편리한 API 키링(keyring) 설치
 
 이 프로그램은 DART API 키와 같은 민감한 정보를 다룰 수 있습니다:  
 이때 매번 코드에 비밀번호나 API 키를 직접 입력하면 보안에 취약하고, 실수로 유출될 위험도 있어요.
@@ -102,7 +74,7 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 
 ![image](https://github.com/user-attachments/assets/9681d4dc-96a5-4eb3-8baf-3bad1ca1aa01)
 
-## 5. 실행은 F9
+## 4. 실행은 F9
 실행할 때는 Cont+A를 눌러서 프로그램 전체를 선택하시고, F9을 눌러서 프로그램 전체를 한번에 실행시켜 주세요. 엔터가 아니라 F9! 
 잘 안될 때에만 부분씩 실행해서 검토하시면 됩니다. 이제 카테고리로 돌아가서 키링을 만들고, 단일판매, 공급계약체결을 크롤링해 보세요. 
 
@@ -114,9 +86,38 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 > 예시, HD현대중공업
 ![image](https://github.com/user-attachments/assets/5888e35c-9da0-43cc-b6cd-39d432312030)
 
-## 6. 추천 링크 
+## 5. 추천 링크 
 좀 더 공부해보고 싶으신 분께는 다음의 도서와 링크를 추천합니다. 
 https://github.com/hyunyulhenry/quant_py
+
+
+## 6. 실행 환경
+
+본 프로그램이 설치된 운영체계는 아래와 같습니다.
+- 혹 운영체계가 서로 맞지 않으면 실행이 되지 않을 수 있는데 그럴 때는 Chat GPT에 물어보면 해결방법을 안내해 줄테니 안심하고 실행해 보세요.
+
+✅ 실행 환경 정보
+- 운영체제: Windows 11
+
+- 파이썬 버전: 3.12.4 (Anaconda 패키징)
+
+- CPU 아키텍처: 64비트 (AMD64)
+
+✅ 설치된 패키지 버전
+- pandas==2.2.2
+
+- requests==2.32.2
+
+- keyring==24.3.1
+
+- selenium==4.25.0
+
+- openpyxl==3.1.2
+
+- tqdm==4.66.4
+
+- beautifulsoup4==4.12.3
+
 
 
 
