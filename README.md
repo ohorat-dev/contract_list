@@ -39,7 +39,7 @@ beautifulsoup4==4.12.3
 1. **바탕화면 또는 시작 메뉴**에서  
    `Anaconda Prompt`를 검색해 실행하세요.
 
-2. 아래 명령어를 그림과 같이 복사해 붙여 넣습니다:
+2. 아래 명령어를 그림과 같이 복사해 붙여 넣습니다: 그리고 엔터를 눌러주세요. 그러면 자동으로 설치가 됩니다.  
 
 pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4 
 >
