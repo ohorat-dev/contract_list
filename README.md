@@ -61,7 +61,7 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 
 설치를 시작하면 완료될 때까지 기다려 주세요. 
 설치 오류가 발생하면 해당 라이브러리만 따로 설치해도 됩니다.
-만약 `pip` 명령어로 설치가 되지 않는 경우, `conda install` 명령어도 사용할 수 있습니다.
+만약 `pip` 명령어로 설치가 되지 않는 경우, `conda install` 명령어를 사용해 볼 수 있습니다.
 
 ### 📦 설치되는 라이브러리 목록
 
