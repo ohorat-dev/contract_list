@@ -90,8 +90,9 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 ![image](https://github.com/user-attachments/assets/5888e35c-9da0-43cc-b6cd-39d432312030)
 
 ## 5. 추천 링크 
-좀 더 공부해보고 싶으신 분께는 다음의 도서와 링크를 추천합니다. 
+이해가 쉽지 않거나 좀 더 공부해보고 싶으신 분께 추천합니다. 
 https://github.com/hyunyulhenry/quant_py
+https://www.youtube.com/watch?v=L0F3XwVwXzA&list=PLBcT2bWZuRNrSOu4vq8nM5eSWiN65-DvG
 
 
 ## 6. 실행 환경
