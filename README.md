@@ -27,7 +27,6 @@ openpyxl==3.1.2
 tqdm==4.66.4
 beautifulsoup4==4.12.3
 
-
 ## 2. 필수 라이브러리 설치
 
 이 프로그램을 실행하기 위해서는 몇 가지 라이브러리가 필요합니다.  
@@ -71,8 +70,7 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 - `selenium` – 웹 브라우저 자동화
 - `openpyxl` – 엑셀 파일(.xlsx) 저장
 - `tqdm` – 진행률 표시
-- `beautifulsoup4` – HTML 분석 및 텍스트 추출
-- 
+- `beautifulsoup4` – HTML 분석 및 텍스트 추출- 
 
 ## 3. 편리한 API 키링(keyring) 설치
 
