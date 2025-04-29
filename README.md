@@ -67,8 +67,7 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 이 프로그램은 DART API 키와 같은 민감한 정보를 다룰 수 있습니다:  
 이때 매번 코드에 비밀번호나 API 키를 직접 입력하면 보안에 취약하고, 실수로 유출될 위험도 있어요.
 
-`keyring` 라이브러리를 사용하면  
-**한 번만 API 키를 저장해두고, 이후에는 자동으로 불러올 수 있어 편리하고 안전합니다.**
+`keyring` 라이브러리를 사용하면 **한 번만 API 키를 저장해두고, 이후에는 자동으로 불러올 수 있어 편리하고 안전합니다.**
 
 - 코드 공유 시 비밀번호/API 키 노출 없음
 - 실행할 때마다 키 입력 불필요
