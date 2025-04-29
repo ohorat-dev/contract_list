@@ -41,10 +41,9 @@ beautifulsoup4==4.12.3
 2. 아래 명령어를 복사해 붙여넣습니다:
 
 pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
+> 이미 설치된 라이브러리는 자동으로 건너뜁니다.
 ![image](https://github.com/user-attachments/assets/d43c0718-c7c1-4079-8976-139acd822ef7)
 
-
-> 이미 설치된 라이브러리는 자동으로 건너뜁니다.
 
 ### ▶ 라이브러리별 개별 설치 명령어
 
