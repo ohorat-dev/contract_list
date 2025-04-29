@@ -98,9 +98,18 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 잘 안될 때에만 부분씩 실행해서 검토하시면 됩니다. 이제 카테고리로 돌아가서 키링을 만들고, 단일판매, 공급계약체결을 크롤링해 보세요. 
 여기에서 제공하는 코드를 파이썬 프로그램 창에 죽 복사해서 F9키를 눌러 한번에 실행하시기 바랍니다. 
 
+최종 출력된 결과는 아래와 같습니다. 보시는 바와 같이 계약금액과 계약기간_시작일은 출력이 되지 않네요. 그러나 주어진 단서를 이용해 수작업을 조금 거치면 아래의 사진에서와 같이 부족한 부분을 채울 수 있기에 수정을 잠시 쉬려합니다.  
+어설퍼도 유용한 파이썬. 
+> 예시, 한화에어로스페이스
+![image](https://github.com/user-attachments/assets/4751cb82-9c6a-4df7-8d4f-bd5239b47c46)
+> 예시, HD현대중공업
+![image](https://github.com/user-attachments/assets/5888e35c-9da0-43cc-b6cd-39d432312030)
+
+
+
 
 ## 5. 추천 링크 
-너무나도 유용한 파이썬. 좀 더 공부해보고 싶으신 분께는 다음의 도서와 링크를 추천합니다. 
+좀 더 공부해보고 싶으신 분께는 다음의 도서와 링크를 추천합니다. 
 https://github.com/hyunyulhenry/quant_py
 
 
