@@ -18,14 +18,14 @@
 
 ## 2. 필수 라이브러리 설치
 
-이 프로그램을 실행하기 위해서는 몇 가지 라이브러리가 필요합니다.  
-Anaconda Prompt를 실행한 후, 아래 명령어를 한 번에 복사하여 설치하세요:
+제가 업로드한 파이썬 프로그램을 실행하기 위해서는 몇 가지 라이브러리가 필요합니다.  
+
 
 ### ▶ 어떻게 설치하나요?
 
 1. '바탕화면 혹은 시작 메뉴 검색창'에서 `Anaconda Prompt`를 검색해 실행하세요.
 
-2. 아래 명령어를 그림과 같이 복사해 붙여 넣습니다: 그리고 엔터를 눌러주세요. 그러면 자동으로 설치가 됩니다.  
+2. 아래 명령어를 그림과 같이 한번에 복사해 붙여 넣습니다: 그리고 엔터를 눌러주세요. 그러면 자동으로 설치가 됩니다.  
 
 pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4 
 >
@@ -37,13 +37,25 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 
 ### ▶ 라이브러리별 개별 설치 명령어
 
-라이브러리를 따로따로 설치하고 싶다면:
+라이브러리를 따로따로 설치하고 싶다면 개별로 설치해도 괜찮습니다:
 > pip install pandas
+>
+> 
 > pip install requests
+>
+> 
 > pip install keyring
+>
+> 
 > pip install selenium
+>
+> 
 > pip install openpyxl
+>
+> 
 > pip install tqdm
+>
+> 
 > pip install beautifulsoup4
 > 설치 중 오류가 발생하면, 아래 개별 설치 명령어를 참고해서 설치하시기 바랍니다.
 
