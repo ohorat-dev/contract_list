@@ -37,7 +37,7 @@ pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
 
 ### ▶ 라이브러리별 개별 설치 명령어
 
-라이브러리를 따로따로 설치하고 싶다면 개별로 설치해도 괜찮습니다:
+라이브러리를 따로따로 설치하고 싶다면 아래와 같이 개별로 설치해도 괜찮습니다:
 > pip install pandas
 >
 > 
