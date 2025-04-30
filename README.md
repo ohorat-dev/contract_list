@@ -27,7 +27,8 @@
 
 2. 아래 명령어를 그림과 같이 한번에 복사해 붙여 넣습니다: 그리고 엔터를 눌러주세요. 그러면 자동으로 설치가 됩니다.  
 
-pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4 
+> pip install pandas requests keyring selenium openpyxl tqdm beautifulsoup4
+> 
 >
 > 설치가 완료될 때까지 기다리세요.
 이미 설치된 항목은 자동으로 건너뜁니다.
