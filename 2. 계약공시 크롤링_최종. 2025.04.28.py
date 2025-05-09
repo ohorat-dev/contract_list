@@ -3,6 +3,8 @@
 최종본 (공시구분 + 파일명 날짜 + 덮어쓰기 + 자동 열기 + 처리 시간 출력 + 총 시간 출력)
 """
 
+#21행의 키링을 본인의 것으로 하시고, 출력하고 싶은 기업이름만 25행에 고쳐쓰시면 됩니다. 다른건 안만져도 돼요. 
+
 import OpenDartReader
 import keyring
 import pandas as pd
