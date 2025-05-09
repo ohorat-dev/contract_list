@@ -1,19 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Apr 28, 2025
-최종 검토/수정 완료본
+최종본 (공시구분 + 파일명 날짜 + 덮어쓰기 + 자동 열기 + 처리 시간 출력 + 총 시간 출력)
 """
-
-# 이 프로그램을 이용시에는,  
-# 1. 23열의 api키를 본인의 것으로 바꾸시고, 
-# 2. 27열의 크롤링을 희망하는 기업으로 이름을 바꾸시고, 
-# 3. 167열의 인출 파일이름을 바꾸시면 됩니다. 이건 안바꿔도 나와요. C드라이브-> 사용자-> administrator-> 문서에서 최종 파일을 찾아보세요. 다운에 2-3분 걸려요. 
 
 import OpenDartReader
 import keyring
 import pandas as pd
 import time
 import re
+import os
+from datetime import datetime
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -23,14 +19,12 @@ from webdriver_manager.chrome import ChromeDriverManager
 api_key = keyring.get_password('dart_api_key', 'lgh')
 dart = OpenDartReader(api_key)
 
-# 2. HD현대중공업 공시 목록 가져오기
-corp_name = 'HD현대중공업'
+# 2. 기업명 설정
+corp_name = 'HD현대미포'
 공시목록 = dart.list(corp=corp_name, start='2017-01-01', end='2025-12-31')
 
-# 3. 단일판매공시 필터링 (정정 포함)
-단일판매공시 = 공시목록[
-    (공시목록['report_nm'].str.contains('단일판매'))
-]
+# 3. 단일판매공시 필터링
+단일판매공시 = 공시목록[공시목록['report_nm'].str.contains('단일판매')]
 
 # 4. 결과 저장용 리스트
 체결계약명 = []
@@ -47,21 +41,31 @@ corp_name = 'HD현대중공업'
 
 # 5. Selenium 설정
 options = webdriver.ChromeOptions()
-options.add_argument('headless')  
+options.add_argument('headless')
 options.add_argument('no-sandbox')
 options.add_argument('disable-dev-shm-usage')
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
 
 # 6. 크롤링
+전체시작 = time.time()
+start_time = time.time()
+
 for idx, row in 단일판매공시.iterrows():
     try:
         rcpNo = row['rcept_no']
         report_nm = row['report_nm']
 
-        # 최초공시/기재정정 구분
+        # ⏱ 공시별 처리 시간 출력
+        elapsed = time.time() - start_time
+        print(f"[{idx+1}/{len(단일판매공시)}] 처리 중: {report_nm} (소요: {elapsed:.2f}초)")
+        start_time = time.time()
+
+        # 공시 구분
         if '정정' in report_nm:
             구분 = '기재정정'
+        elif '해지' in report_nm:
+            구분 = '계약취소'
         else:
             구분 = '최초'
 
@@ -82,35 +86,26 @@ for idx, row in 단일판매공시.iterrows():
             for r in rows:
                 cols = [col.get_text(strip=True) for col in r.find_all(['th', 'td'])]
                 if len(cols) >= 2:
-                    # 체결계약명
                     if '체결계약명' in cols[0] and 계약명 is None:
                         계약명 = cols[1]
-                    # 계약금액
                     if '계약금액' in cols[0] and 금액 is None:
                         금액 = re.sub(r'[^0-9]', '', cols[1])
                         금액 = int(금액) if 금액.isdigit() else None
-                    # 최근매출액
                     if '최근매출액' in cols[0] and 매출 is None:
                         매출 = re.sub(r'[^0-9]', '', cols[1])
                         매출 = int(매출) if 매출.isdigit() else None
-                    # 매출액대비
                     if '매출액대비' in cols[0] and 매출비 is None:
                         매출비 = re.sub(r'[^0-9.]', '', cols[1])
                         매출비 = float(매출비) if 매출비 else None
-                    # 대규모법인여부
                     if '대규모법인여부' in cols[0] and 대규모 is None:
                         대규모 = cols[1]
-                    # 계약상대방 or 계약상대
                     if (('계약상대방' in cols[0].replace(' ', '')) or ('계약상대' in cols[0].replace(' ', ''))) and 상대 is None:
                         상대 = cols[1]
-                    # 계약기간 시작일
                     if '시작일' in cols[0] and 시작일 is None:
                         시작일 = cols[1].replace('.', '-')
-                    # 계약기간 종료일
                     if '종료일' in cols[0] and 종료일 is None:
                         종료일 = cols[1].replace('.', '-')
 
-        # 여기부터 데이터 저장 (들여쓰기 맞춰야 함)
         체결계약명.append(계약명)
         계약금액.append(금액)
         최근매출액.append(매출)
@@ -138,15 +133,9 @@ for idx, row in 단일판매공시.iterrows():
         계약상대방.append(None)
         계약기간_시작.append(None)
         계약기간_종료.append(None)
-
-        if rcpNo and len(rcpNo) >= 8:
-            수주일자.append(f"{rcpNo[:4]}-{rcpNo[4:6]}-{rcpNo[6:8]}")
-        else:
-            수주일자.append(None)
-
+        수주일자.append(f"{rcpNo[:4]}-{rcpNo[4:6]}-{rcpNo[6:8]}" if rcpNo and len(rcpNo) >= 8 else None)
         공시구분.append(구분)
         공시링크.append(url)
-
 
 # 7. 데이터프레임 생성
 df = pd.DataFrame({
@@ -163,12 +152,20 @@ df = pd.DataFrame({
     '공시링크': 공시링크
 })
 
-# 8. 엑셀 저장
-save_path = 'C:/Users/Administrator/Documents/HD현대중공업_수주공시_2017_2025_완성.xlsx'
-df.to_excel(save_path, index=False)
+# 8. 엑셀 저장 (날짜 포함 + 열려 있으면 예외 처리 + 저장 후 자동 실행)
+today = datetime.today().strftime('%Y%m%d')
+save_path = f'C:/Users/Administrator/Documents/{corp_name}_수주공시_{today}.xlsx'
+
+try:
+    df.to_excel(save_path, index=False)
+    print(f'✅ 저장 완료: {save_path}')
+    os.startfile(save_path)
+except PermissionError:
+    print(f'❌ 저장 실패: 엑셀 파일이 열려 있습니다.\n경로: {save_path}')
 
 # 9. 드라이버 종료
 driver.quit()
 
-print('2017~2025 전체 수주공시 데이터 크롤링 및 저장 완료!')
-
+# 🔚 총 소요 시간 출력
+total_time = time.time() - 전체시작
+print(f"\n⏱ 전체 작업 완료! 총 소요 시간: {total_time:.2f}초")
