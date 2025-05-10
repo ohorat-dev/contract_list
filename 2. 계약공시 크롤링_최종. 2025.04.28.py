@@ -139,7 +139,7 @@ for idx, row in 단일판매공시.iterrows():
         공시구분.append(구분)
         공시링크.append(url)
 
-# 7. 데이터프레임 생성
+# 7. 데이터프레임 생성 및 번호 부여 + 계산 추가
 df = pd.DataFrame({
     '수주일자': 수주일자,
     '공시구분': 공시구분,
@@ -154,11 +154,15 @@ df = pd.DataFrame({
     '공시링크': 공시링크
 })
 
-# [추가] 계약기간 계산 및 계약금액산출 계산
+# 날짜 파싱 및 계산 열 추가
 df['수주일자_dt'] = pd.to_datetime(df['수주일자'], errors='coerce')
 df['계약기간_종료_dt'] = pd.to_datetime(df['계약기간_종료'], errors='coerce')
 df['계약기간(년)'] = ((df['계약기간_종료_dt'] - df['수주일자_dt']).dt.days / 365).round(2)
 df['계약금액산출'] = (df['최근매출액(원)'] * df['매출액대비(%)'] / 100).round()
+
+# 최신순 정렬 + 번호 부여
+df = df.sort_values(by='수주일자_dt', ascending=False).reset_index(drop=True)
+df.insert(0, '번호', df.index + 1)
 
 
 # 8. 엑셀 저장 (날짜 포함 + 열려 있으면 예외 처리 + 저장 후 자동 실행)
