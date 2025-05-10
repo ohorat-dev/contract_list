@@ -3,7 +3,7 @@
 최종본 (공시구분 + 파일명 날짜 + 덮어쓰기 + 자동 열기 + 처리 시간 출력 + 총 시간 출력)
 """
 
-#21행의 키링을 본인의 것으로 하시고, 출력하고 싶은 기업이름만 25행에 고쳐쓰시면 됩니다. 다른건 안만져도 돼요. 
+#2025.05.10 수정함_21행의 키링을 본인의 것으로 하시고, 출력하고 싶은 기업이름만 25행에 고쳐쓰시면 됩니다. 다른건 안만져도 돼요. 
 
 import OpenDartReader
 import keyring
@@ -22,7 +22,7 @@ api_key = keyring.get_password('dart_api_key', 'lgh')
 dart = OpenDartReader(api_key)
 
 # 2. 기업명 설정
-corp_name = 'HD현대미포'
+corp_name = '한화엔진'
 공시목록 = dart.list(corp=corp_name, start='2017-01-01', end='2025-12-31')
 
 # 3. 단일판매공시 필터링
@@ -153,6 +153,13 @@ df = pd.DataFrame({
     '계약기간_종료': 계약기간_종료,
     '공시링크': 공시링크
 })
+
+# [추가] 계약기간 계산 및 계약금액산출 계산
+df['수주일자_dt'] = pd.to_datetime(df['수주일자'], errors='coerce')
+df['계약기간_종료_dt'] = pd.to_datetime(df['계약기간_종료'], errors='coerce')
+df['계약기간(년)'] = ((df['계약기간_종료_dt'] - df['수주일자_dt']).dt.days / 365).round(2)
+df['계약금액산출'] = (df['최근매출액(원)'] * df['매출액대비(%)'] / 100).round()
+
 
 # 8. 엑셀 저장 (날짜 포함 + 열려 있으면 예외 처리 + 저장 후 자동 실행)
 today = datetime.today().strftime('%Y%m%d')
