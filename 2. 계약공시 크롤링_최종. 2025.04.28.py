@@ -3,8 +3,6 @@
 최종본 (공시구분 + 파일명 날짜 + 덮어쓰기 + 자동 열기 + 처리 시간 출력 + 총 시간 출력)
 """
 
-#2025.05.10 수정함_21행의 키링을 본인의 것으로 하시고, 출력하고 싶은 기업이름만 25행에 고쳐쓰시면 됩니다. 다른건 안만져도 돼요. 
-
 import OpenDartReader
 import keyring
 import pandas as pd
@@ -22,7 +20,7 @@ api_key = keyring.get_password('dart_api_key', 'lgh')
 dart = OpenDartReader(api_key)
 
 # 2. 기업명 설정
-corp_name = '한화엔진'
+corp_name = 'HD현대중공업'
 공시목록 = dart.list(corp=corp_name, start='2017-01-01', end='2025-12-31')
 
 # 3. 단일판매공시 필터링
@@ -139,7 +137,7 @@ for idx, row in 단일판매공시.iterrows():
         공시구분.append(구분)
         공시링크.append(url)
 
-# 7. 데이터프레임 생성 및 번호 부여 + 계산 추가
+# 7. 데이터프레임 생성
 df = pd.DataFrame({
     '수주일자': 수주일자,
     '공시구분': 공시구분,
@@ -154,27 +152,16 @@ df = pd.DataFrame({
     '공시링크': 공시링크
 })
 
-# 날짜 파싱 및 계산 열 추가
-df['수주일자_dt'] = pd.to_datetime(df['수주일자'], errors='coerce')
-df['계약기간_종료_dt'] = pd.to_datetime(df['계약기간_종료'], errors='coerce')
-df['계약기간(년)'] = ((df['계약기간_종료_dt'] - df['수주일자_dt']).dt.days / 365).round(2)
-df['계약금액산출'] = (df['최근매출액(원)'] * df['매출액대비(%)'] / 100).round()
-
-# 최신순 정렬 + 번호 부여
-df = df.sort_values(by='수주일자_dt', ascending=False).reset_index(drop=True)
-df.insert(0, '번호', df.index + 1)
-
-
 # 8. 엑셀 저장 (날짜 포함 + 열려 있으면 예외 처리 + 저장 후 자동 실행)
 today = datetime.today().strftime('%Y%m%d')
 save_path = f'C:/Users/Administrator/Documents/{corp_name}_수주공시_{today}.xlsx'
 
 try:
     df.to_excel(save_path, index=False)
-    print(f'✅ 저장 완료: {save_path}')
+    print(f'저장 완료: {save_path}')
     os.startfile(save_path)
 except PermissionError:
-    print(f'❌ 저장 실패: 엑셀 파일이 열려 있습니다.\n경로: {save_path}')
+    print(f'저장 실패: 엑셀 파일이 열려 있습니다.\n경로: {save_path}')
 
 # 9. 드라이버 종료
 driver.quit()
